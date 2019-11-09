@@ -3,14 +3,29 @@ import styled from 'styled-components';
 
 // import assets from '@assets';
 import theme from '@theme';
+import api from '@api';
+
+import RecipesOfDay from './RecipesOfDay';
 
 const RecipesOfDays = ({navigation}) => {
+  // TODO api should be executed here
+  // Component should be loading meanwhile
+  const nutritionData = api.getNutririonData();
+
+  const daysData = nutritionData.days;
+
+  // console.warn(daysData)
+
   return (
     <MainContainer>
-      <Button 
-        onPress={() => navigation.navigate('RecipesOfDay')}
-        title="Press Me"
-      />
+      <TestText>Days</TestText>
+      {
+        daysData.map((dayData, i) => {
+          return (
+            <RecipesOfDay key={i} dayData={dayData}/>
+          )
+        })
+      }
     </MainContainer>
   );
 };
@@ -18,8 +33,6 @@ const RecipesOfDays = ({navigation}) => {
 const MainContainer = styled.View`
   flex: 1;
 `;
-
-const Button = styled.Button``
 
 const TestText = styled.Text``
 

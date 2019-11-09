@@ -5,7 +5,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import theme from '@theme';
 
 import BottomTabNavigator from './BottomTabNavigator';
-import RecipesOfDay from '../pages/RecipesOfDay';
+import Recipe from '../pages/Recipe';
 
 const MainNavigator = createStackNavigator(
   {
@@ -16,9 +16,9 @@ const MainNavigator = createStackNavigator(
         headerMode: 'none'
       },
     }, 
-    RecipesOfDay: { 
-      screen: RecipesOfDay,
-    }
+    // Recipe: { 
+    //   screen: Recipe,
+    // }
   }
 );
 
