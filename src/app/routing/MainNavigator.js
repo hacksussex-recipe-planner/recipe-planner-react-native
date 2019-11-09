@@ -5,7 +5,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import theme from '@theme';
 
 import BottomTabNavigator from './BottomTabNavigator';
-import Recipe from '../pages/Recipe';
+import RecipeDetail from '../pages/RecipeDetail';
 
 const MainNavigator = createStackNavigator(
   {

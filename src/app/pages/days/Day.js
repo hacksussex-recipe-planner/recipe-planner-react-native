@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // import assets from '@assets';
 import theme from '@theme';
 
-import Recipe from './Recipe';
+import Recipe from './day/Recipe';
 
 const Day = (props) => {
   

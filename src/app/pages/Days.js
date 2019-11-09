@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import theme from '@theme';
 import api from '@api';
 
-import Day from './Day';
+import Day from './days/Day';
 
 const Days = ({navigation}) => {
   // TODO api should be executed here
