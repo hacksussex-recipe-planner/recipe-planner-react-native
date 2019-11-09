@@ -9,12 +9,20 @@ import Day from './days/Day';
 
 const Days = ({navigation}) => {
   const [nutritionData, setNutritionData] = useState(null)
+  
+  // TODO send actual data here
+  const mockPostData = {}
 
   useEffect(() => {
-    api.getNutririonData().then((nutritionData) => {
-      setNutritionData(nutritionData)
+    api.getNutririonData(mockPostData)
+    .then((response) => {
+      setNutritionData(response.data)
     })
-  })
+    .catch((error) => {
+      console.warn('Request failed!')
+      console.warn(error)
+    })
+  }, [])
 
   if (!nutritionData) {
     return <TestText>Loading...</TestText>

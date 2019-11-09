@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { withNavigation } from 'react-navigation';
 
 // import assets from '@assets';
 import theme from '@theme';
 
-const Recipe = ({recipeData}) => {
+const Recipe = ({recipeData, navigation}) => {
   return (
     <MainContainer>
       <Button 
-        onPress={() => navigation.navigate('Recipe', { recipeData })}
+        onPress={() => navigation.navigate('RecipeDetail', { recipeData })}
         title={recipeData.name}
       />
     </MainContainer>
@@ -24,4 +25,4 @@ const TestText = styled.Text``;
 const Button = styled.Button``;
 
 
-export default Recipe;
+export default withNavigation(Recipe);
