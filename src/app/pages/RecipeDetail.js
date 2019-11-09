@@ -4,13 +4,13 @@ import styled from 'styled-components';
 // import assets from '@assets';
 import theme from '@theme';
 
-const Recipes = ({recipeData}) => {
+const Recipe = ({navigation}) => {
+
+  recipeData = navigation.getParam('recipeData');
+
   return (
     <MainContainer>
-      <Button 
-        onPress={() => navigation.navigate('Recipe', { recipeData })}
-        title={recipeData.name}
-      />
+      <TestText>Recipe name: {recipeData.name}</TestText>
     </MainContainer>
   );
 };
@@ -21,6 +21,4 @@ const MainContainer = styled.View`
 
 const TestText = styled.Text``
 
-const Button = styled.Button``
-
-export default Recipes;
+export default Recipe;

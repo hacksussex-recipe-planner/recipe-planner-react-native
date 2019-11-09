@@ -4,9 +4,9 @@ import styled from 'styled-components';
 // import assets from '@assets';
 import theme from '@theme';
 
-import RecipeOfDay from './RecipeOfDay';
+import Recipe from './Recipe';
 
-const RecipesOfDay = (props) => {
+const Day = (props) => {
   
 //   console.warn('dayData')
 //   console.warn(props)
@@ -23,7 +23,7 @@ const RecipesOfDay = (props) => {
       </TestText>
       {
         recipes.map((recipe, i) => {
-          return (<RecipeOfDay key={i} recipeData={recipe} />)
+          return (<Recipe key={i} recipeData={recipe} />)
         })
       }
     </MainContainer>
@@ -36,4 +36,4 @@ const MainContainer = styled.View`
 
 const TestText = styled.Text``
 
-export default RecipesOfDay;
+export default Day;

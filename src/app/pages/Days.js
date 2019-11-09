@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import theme from '@theme';
 import api from '@api';
 
-import RecipesOfDay from './RecipesOfDay';
+import Day from './Day';
 
-const RecipesOfDays = ({navigation}) => {
+const Days = ({navigation}) => {
   // TODO api should be executed here
   // Component should be loading meanwhile
   const nutritionData = api.getNutririonData();
@@ -22,7 +22,7 @@ const RecipesOfDays = ({navigation}) => {
       {
         daysData.map((dayData, i) => {
           return (
-            <RecipesOfDay key={i} dayData={dayData}/>
+            <Day key={i} dayData={dayData}/>
           )
         })
       }
@@ -36,5 +36,5 @@ const MainContainer = styled.View`
 
 const TestText = styled.Text``
 
-export default RecipesOfDays;
+export default Days;
 

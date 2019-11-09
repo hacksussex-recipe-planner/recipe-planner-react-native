@@ -9,13 +9,13 @@ import IconFeather from 'react-native-vector-icons/Feather';
 import theme from '@theme';
 
 import Shopping from '../pages/Shopping';
-import RecipesOfDays from '../pages/RecipesOfDays';
+import Days from '../pages/Days';
 import Profile from '../pages/Profile';
 
 const BottomTabNavigator = createBottomTabNavigator(
   {
-    RecipesOfDays: {
-      screen: RecipesOfDays,
+    Days: {
+      screen: Days,
       navigationOptions: {
         tabBarLabel: "Recipes",
         tabBarIcon: ({ tintColor }) => (
