@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 // import assets from '@assets';
@@ -8,19 +8,23 @@ import api from '@api';
 import Day from './days/Day';
 
 const Days = ({navigation}) => {
-  // TODO api should be executed here
-  // Component should be loading meanwhile
-  const nutritionData = api.getNutririonData();
+  const [nutritionData, setNutritionData] = useState(null)
 
-  const daysData = nutritionData.days;
+  useEffect(() => {
+    api.getNutririonData().then((nutritionData) => {
+      setNutritionData(nutritionData)
+    })
+  })
 
-  // console.warn(daysData)
+  if (!nutritionData) {
+    return <TestText>Loading...</TestText>
+  }
 
   return (
     <MainContainer>
       <TestText>Days</TestText>
       {
-        daysData.map((dayData, i) => {
+        nutritionData.days.map((dayData, i) => {
           return (
             <Day key={i} dayData={dayData}/>
           )

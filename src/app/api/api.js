@@ -33,7 +33,13 @@ api.getNutririonData = () => {
     ]
   };
 
-  return mockData
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(mockData);
+    }, 1000)
+  })
+
+  return promise
 }
 
 export default api;
