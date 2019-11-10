@@ -43,7 +43,7 @@ const Profile = () => {
         </InputRow>
 
         <InputRow>
-          <Label>Weight</Label>
+          <Label>Weight (kg)</Label>
           <InputWrapper>
             <TextInput
               value={profile.weight}
@@ -53,7 +53,7 @@ const Profile = () => {
         </InputRow>
 
         <InputRow>
-          <Label>Height</Label>
+          <Label>Height (cm)</Label>
           <InputWrapper>
             <TextInput
               value={profile.height}
@@ -95,7 +95,6 @@ const Profile = () => {
 const MainContainer = styled.View`
   flex: 1;
   padding: ${theme.styles.mainPadding};
-  
 `;
 
 const HeaderWrapper = styled.View`

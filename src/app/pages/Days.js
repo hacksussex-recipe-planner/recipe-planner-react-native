@@ -14,6 +14,16 @@ const Days = ({navigation}) => {
   const nutritionData = useStoreState(state => state.nutritionData.data);
   const profile = useStoreState(state => state.profile.data);
   const getNutririonData = useStoreActions(actions => actions.nutritionData.getNutririonData);
+
+  const dayNames = [
+    'Monday, 11',
+    'Tuesday, 12',
+    'Wednesday, 13',
+    'Thursday, 14',
+    'Friday, 15',
+    'Saturday, 16',
+    'Sunday, 17'
+  ]
   
 
   useEffect(() => {
@@ -36,7 +46,7 @@ const Days = ({navigation}) => {
         {
           nutritionData.days.map((dayData, i) => {
             return (
-              <Day key={i} dayData={dayData}/>
+              <Day key={i} dayData={dayData} dayName={dayNames[i]}/>
             )
           })
         }
@@ -47,12 +57,12 @@ const Days = ({navigation}) => {
 
 const MainContainer = styled.ScrollView`
   flex: 1;
-  background-color: ${theme.colors.appBackground}
 `;
 
 const Wrapper = styled.View`
   padding-top: ${theme.styles.marginBlocks};
   padding-bottom: ${theme.styles.marginBlocks};
+  background-color: ${theme.colors.inputBackground}
 `
 
 const Text = styled.Text``

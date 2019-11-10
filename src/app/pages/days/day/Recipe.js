@@ -31,13 +31,14 @@ const TouchableWrapper = styled.TouchableOpacity`
   flex-direction: row;
   height: 50px;
   padding: 10px;
-  border: 1px solid ${theme.colors.main};
+  /*border: 1px solid ${theme.colors.main};*/
   border-radius: 3px;
   justify-content: flex-start;
   border-style: dotted;
   align-items: center;
   margin-bottom: 8px;
   margin-top: 8px;
+  background-color: ${theme.colors.buttonColor}
 `
 
 const Picture = styled.Image`
@@ -48,10 +49,6 @@ const Picture = styled.Image`
 `;
 
 const Text = styled.Text``;
-
-const Button = styled.Button`
-  backgroun
-`;
 
 
 export default withNavigation(Recipe);

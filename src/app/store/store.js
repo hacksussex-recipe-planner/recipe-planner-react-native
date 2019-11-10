@@ -20,7 +20,7 @@ const nutritionData = {
 const profile = {
   data: {
     gender: 'female',
-    weight: '60.50',
+    weight: '60',
     height: '170',
     age: '35',
     preferences: {

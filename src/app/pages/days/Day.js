@@ -6,7 +6,7 @@ import theme from '@theme';
 
 import Recipe from './day/Recipe';
 
-const Day = ({dayData}) => {
+const Day = ({dayData, dayName}) => {
   
 //   console.warn('dayData')
 //   console.warn(props)
@@ -15,12 +15,11 @@ const Day = ({dayData}) => {
 //   console.warn(props.dayData.recipes)
 
   const recipes = dayData.recipes;
-  const date = dayData.date
 
   return (
     <MainContainer>
       <Header>
-        Your recipes for {date}
+        Your recipes for {dayName}
       </Header>
       {
         recipes.map((recipe, i) => {
