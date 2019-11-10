@@ -17,8 +17,33 @@ const nutritionData = {
   }),
 }
 
+const profile = {
+  data: {
+    gender: 'female',
+    weight: '60.50',
+    height: '170',
+    age: '35',
+    preferences: {
+      vegan: false,
+      veggie: false,
+      dietType: 'bulk'
+    }
+  },
+  
+  updateProfileData: action((state, payload) => {
+    field = payload[0];
+    value = payload[1];
+    if (field == 'dietType') {
+      state.data.preferences.dietType = value;  
+    } else {
+      state.data[field] = value;
+    }
+  })
+}
+
 const store = createStore({
-  nutritionData
+  nutritionData,
+  profile
 });
 
 

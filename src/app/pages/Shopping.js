@@ -7,7 +7,7 @@ import theme from '@theme';
 const Shopping = () => {
   return (
     <MainContainer>
-      <TestText>Shopping</TestText>
+      <Text>Shopping</Text>
     </MainContainer>
   );
 };
@@ -16,7 +16,7 @@ const MainContainer = styled.View`
   flex: 1;
 `;
 
-const TestText = styled.Text`
+const Text = styled.Text`
   color: ${theme.RED};
 `
 

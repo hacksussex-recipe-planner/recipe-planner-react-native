@@ -12,40 +12,27 @@ const Days = ({navigation}) => {
   // const [nutritionData, setNutritionData] = useState(null)
 
   const nutritionData = useStoreState(state => state.nutritionData.data);
+  const profile = useStoreState(state => state.profile.data);
   const getNutririonData = useStoreActions(actions => actions.nutritionData.getNutririonData);
   
-  // TODO send actual data here
-  const mockPostData = {   
-    gender: 'male',
-    weight: 400.33,
-    height: 30.33,
-    age: 32,
-    preferences: {
-        vegan: true,
-        veggie: false,
-        dietType: 'bulk'
-    },
-    gymDates: [true, false, true, false, false, true, false]
-  }
 
   useEffect(() => {
-    getNutririonData(mockPostData)
-    // .then((response) => {
-    //   setNutritionData(response.data)
-    // })
-    // .catch((error) => {
-    //   console.warn('Request failed!')
-    //   console.warn(error)
-    // })
+    // TODO try to get if from the calendar
+    gymDates = [true, false, true, false, false, true, false];
+    
+    payload = profile;
+    payload.gymDates = gymDates;
+
+    getNutririonData(payload)
   }, [])
 
   if (!nutritionData) {
-    return <TestText>Loading...</TestText>
+    return <Text>Loading...</Text>
   }
 
   return (
     <MainContainer>
-      <TestText>Days</TestText>
+      <Text>Days</Text>
       {
         nutritionData.days.map((dayData, i) => {
           return (
@@ -61,7 +48,7 @@ const MainContainer = styled.View`
   flex: 1;
 `;
 
-const TestText = styled.Text``
+const Text = styled.Text``
 
 export default Days;
 

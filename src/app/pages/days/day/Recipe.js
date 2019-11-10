@@ -20,7 +20,7 @@ const MainContainer = styled.View`
   flex: 1;
 `;
 
-const TestText = styled.Text``;
+const Text = styled.Text``;
 
 const Button = styled.Button``;
 

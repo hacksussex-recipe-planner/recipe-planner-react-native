@@ -18,9 +18,9 @@ const Day = (props) => {
 
   return (
     <MainContainer>
-      <TestText>
+      <Text>
         Recipes of Day
-      </TestText>
+      </Text>
       {
         recipes.map((recipe, i) => {
           return (<Recipe key={i} recipeData={recipe} />)
@@ -34,6 +34,6 @@ const MainContainer = styled.View`
   flex: 1;
 `;
 
-const TestText = styled.Text``
+const Text = styled.Text``
 
 export default Day;

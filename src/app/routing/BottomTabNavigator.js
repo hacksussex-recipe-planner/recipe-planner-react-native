@@ -43,6 +43,7 @@ const BottomTabNavigator = createBottomTabNavigator(
     },
   },
   {
+    initialRouteName: "Profile",
     tabBarOptions: {
       headerVisible: false,
       activeTintColor: theme.MAIN,

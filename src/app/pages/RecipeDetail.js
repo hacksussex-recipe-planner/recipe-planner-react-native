@@ -10,7 +10,7 @@ const Recipe = ({navigation}) => {
 
   return (
     <MainContainer>
-      <TestText>Recipe name: {recipeData.name}</TestText>
+      <Text>Recipe name: {recipeData.name}</Text>
     </MainContainer>
   );
 };
@@ -19,6 +19,6 @@ const MainContainer = styled.View`
   flex: 1;
 `;
 
-const TestText = styled.Text``
+const Text = styled.Text``
 
 export default Recipe;
