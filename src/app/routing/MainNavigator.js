@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {createStackNavigator} from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
 
 import theme from '@theme';
 
@@ -22,4 +23,4 @@ const MainNavigator = createStackNavigator(
   }
 );
 
-export default MainNavigator
+export default createAppContainer(MainNavigator)

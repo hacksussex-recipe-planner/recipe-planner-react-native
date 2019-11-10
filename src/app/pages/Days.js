@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useStoreActions, useStoreState } from 'easy-peasy';
 
 // import assets from '@assets';
 import theme from '@theme';
@@ -8,7 +9,10 @@ import api from '@api';
 import Day from './days/Day';
 
 const Days = ({navigation}) => {
-  const [nutritionData, setNutritionData] = useState(null)
+  // const [nutritionData, setNutritionData] = useState(null)
+
+  const nutritionData = useStoreState(state => state.nutritionData.data);
+  const getNutririonData = useStoreActions(actions => actions.nutritionData.getNutririonData);
   
   // TODO send actual data here
   const mockPostData = {   
@@ -25,14 +29,14 @@ const Days = ({navigation}) => {
   }
 
   useEffect(() => {
-    api.getNutririonData(mockPostData)
-    .then((response) => {
-      setNutritionData(response.data)
-    })
-    .catch((error) => {
-      console.warn('Request failed!')
-      console.warn(error)
-    })
+    getNutririonData(mockPostData)
+    // .then((response) => {
+    //   setNutritionData(response.data)
+    // })
+    // .catch((error) => {
+    //   console.warn('Request failed!')
+    //   console.warn(error)
+    // })
   }, [])
 
   if (!nutritionData) {

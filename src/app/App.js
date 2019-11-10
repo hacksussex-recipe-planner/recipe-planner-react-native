@@ -1,9 +1,15 @@
 import React from 'react';
-
-import {createAppContainer} from 'react-navigation';
+import { StoreProvider } from 'easy-peasy';
 
 import MainNavigator from './routing/MainNavigator';
+import store from '@store';
 
-const App = createAppContainer(MainNavigator);
+const App = () => {
+  return (
+    <StoreProvider store={store}>
+      <MainNavigator />
+    </StoreProvider> 
+  )
+};
 
 export default App;
