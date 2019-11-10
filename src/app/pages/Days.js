@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { RefreshControl, SafeAreaView } from 'react-native';
 import styled from 'styled-components';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 import RNCalendarEvents from 'react-native-calendar-events';
@@ -11,6 +12,7 @@ import Day from './days/Day';
 
 const Days = ({navigation}) => {
   // const [nutritionData, setNutritionData] = useState(null)
+  const [refreshing, setRefreshing] = useState(false);
 
   const nutritionData = useStoreState(state => state.nutritionData.data);
   const profile = useStoreState(state => state.profile.data);
@@ -32,7 +34,13 @@ const Days = ({navigation}) => {
 
   const updateGymDates = useStoreActions(actions => actions.nutritionData.updateGymDates);
 
-  useEffect(() => {
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+
+    updateNutritionResults()    
+  }, [refreshing]);
+
+  const updateNutritionResults = () => {
     RNCalendarEvents.findCalendars()
     .then(calendars => {
       // console.warn(calendars)
@@ -71,18 +79,19 @@ const Days = ({navigation}) => {
             gymDates.push(false)
           }
         });
-// 
-//         console.warn("gymDates")
-//         console.warn(gymDates)
 
         payload = profile;
         payload.gymDates = gymDates;
 
         getNutririonData(payload)
 
+        setRefreshing(false);
       })
     })
-    
+  }
+
+  useEffect(() => {
+    updateNutritionResults();
   }, [])
 
   if (!nutritionData) {
@@ -96,17 +105,22 @@ const Days = ({navigation}) => {
   }
 
   return (
-    <MainContainer>
-      <Wrapper>
-        {
-          nutritionData.map((dayData, i) => {
-            return (
-              <Day key={i} dayData={dayData} dayName={dayNames[i]} dayId={i}/>
-            )
-          })
-        }
-      </Wrapper>
-    </MainContainer>
+    <SafeAreaView style={{flex: 1}}>
+      <MainContainer
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
+        <Wrapper>
+          {
+            nutritionData.map((dayData, i) => {
+              return (
+                <Day key={i} dayData={dayData} dayName={dayNames[i]} dayId={i}/>
+              )
+            })
+          }
+        </Wrapper>
+      </MainContainer>
+    </SafeAreaView>
   );
 };
 
