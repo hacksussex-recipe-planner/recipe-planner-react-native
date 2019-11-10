@@ -102,8 +102,8 @@ const PictureWrapper = styled.View`
 `;
 
 const Picture = styled.Image`
-  height: 200px;
-  width: 300px;
+  height: 220px;
+  width: 340px;
   border-radius: 6px;
 `;
 
