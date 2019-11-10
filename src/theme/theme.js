@@ -1,8 +1,16 @@
 const theme = {
-  RED: '#ff0000',
-  MAIN: '#D4AF37',
-  INACTIVE_ITEM: 'grey',
-  WHITE: 'white'
+  colors: {
+    red: '#ff0000',
+    main: '#d4af37',
+    inactive_item: 'grey',
+    white: 'white',
+    inputBackground: "#fafafa",
+  },
+  styles: {
+    mainPadding: '25px',
+    fontSize: '16px',
+    header: '20px'
+  }
 };
 
 export default theme;

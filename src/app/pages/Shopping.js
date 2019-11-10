@@ -17,7 +17,7 @@ const MainContainer = styled.View`
 `;
 
 const Text = styled.Text`
-  color: ${theme.RED};
+  color: ${theme.colors.red};
 `
 
 export default Shopping;

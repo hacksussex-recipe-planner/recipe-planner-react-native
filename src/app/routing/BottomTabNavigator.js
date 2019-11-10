@@ -46,10 +46,10 @@ const BottomTabNavigator = createBottomTabNavigator(
     initialRouteName: "Profile",
     tabBarOptions: {
       headerVisible: false,
-      activeTintColor: theme.MAIN,
-      inactiveTintColor: theme.INACTIVE_ITEM,
+      activeTintColor: theme.colors.main,
+      inactiveTintColor: theme.colors.inactive_item,
       style: {
-        backgroundColor: theme.WHITE,
+        backgroundColor: theme.colors.white,
       }
     },
   }
