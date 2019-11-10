@@ -70,4 +70,28 @@ api.getNutririonData = payload => {
   return promise
 }
 
+api.getShoppingList = payload => {
+
+  const mockData = {
+    data: [
+      ['Carrots (kg)', 0.5],
+      ['Papas (kg)', 1],
+      ['Chicken breasts (kg)', 1.5],
+      ['Milk (lt)', 6],
+      ['Yogurt (items)', 6],
+      ['Bread (items)', 1],
+      ['Lettuce (grams)', 300],
+      ['Cod fillets (kg)', 1.2]
+    ]
+  };
+
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(mockData);
+    }, 10)
+  })
+
+  return promise
+}
+
 export default api;

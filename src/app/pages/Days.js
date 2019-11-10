@@ -69,7 +69,7 @@ const MainContainer = styled.ScrollView`
 const Wrapper = styled.View`
   padding-top: ${theme.styles.marginBlocks};
   padding-bottom: ${theme.styles.marginBlocks};
-  background-color: ${theme.colors.inputBackground}
+  background-color: ${theme.colors.mainGrayBackground}
 `
 
 const ActivityIndicator = styled.ActivityIndicator`

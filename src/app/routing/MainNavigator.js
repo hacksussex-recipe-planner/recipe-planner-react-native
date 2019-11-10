@@ -19,6 +19,9 @@ const MainNavigator = createStackNavigator(
     }, 
     RecipeDetail: {
       screen: RecipeDetail,
+      navigationOptions: {
+        title: 'Recipe'
+      }
     }
   }
 );

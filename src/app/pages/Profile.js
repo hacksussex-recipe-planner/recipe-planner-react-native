@@ -28,7 +28,7 @@ const Profile = () => {
       </HeaderWrapper>
       <InputsWrapper>
         <InputRow>
-          <Label>Gender</Label>
+          <Label>Gender:</Label>
           <InputWrapper>
             <Picker
               selectedValue={profile.gender}
@@ -43,7 +43,7 @@ const Profile = () => {
         </InputRow>
 
         <InputRow>
-          <Label>Weight (kg)</Label>
+          <Label>Weight (kg):</Label>
           <InputWrapper>
             <TextInput
               value={profile.weight}
@@ -53,7 +53,7 @@ const Profile = () => {
         </InputRow>
 
         <InputRow>
-          <Label>Height (cm)</Label>
+          <Label>Height (cm):</Label>
           <InputWrapper>
             <TextInput
               value={profile.height}
@@ -63,7 +63,7 @@ const Profile = () => {
         </InputRow>
 
         <InputRow>
-          <Label>Age</Label>
+          <Label>Age:</Label>
           <InputWrapper>
             <TextInput
               value={profile.age}
@@ -73,7 +73,7 @@ const Profile = () => {
         </InputRow>
 
         <InputRow>
-          <Label>Diet type</Label>
+          <Label>Diet type:</Label>
           <InputWrapper>
             <Picker
               selectedValue={profile.preferences.dietType}
@@ -95,6 +95,7 @@ const Profile = () => {
 const MainContainer = styled.View`
   flex: 1;
   padding: ${theme.styles.mainPadding};
+  background-color: ${theme.colors.mainGrayBackground};
 `;
 
 const HeaderWrapper = styled.View`
@@ -118,11 +119,11 @@ const InputsWrapper = styled.View`
   border-width: 1px;
   border-color: ${theme.colors.borderColor};
   border-radius: 5px;
+  background-color: ${theme.colors.white};
 `;
 
 const InputRow = styled.View`
   flex-direction: row;
-  /*justify-content: center;*/
   align-items: center;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -137,11 +138,11 @@ const CheckBoxWrapper = styled.View``;
 const Picker = styled.Picker`
   font-size: ${theme.styles.fontSize};
   padding: 20px;
-  background-color: ${theme.colors.inputBackground};
+  background-color: ${theme.colors.mainGrayBackground};
 `;
 
 const TextInput = styled.TextInput`
-  background-color: ${theme.colors.inputBackground};
+  background-color: ${theme.colors.valueHighlight};
   font-size: ${theme.styles.fontSize};
 `;
 

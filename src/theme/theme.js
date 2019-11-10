@@ -6,6 +6,7 @@ const theme = {
     buttonColor: 'rgba(225, 115, 51, 0.08)',
     inactive_item: 'grey',
     white: 'white',
+    mainGrayBackground: "#fafafa",
     inputBackground: "#fafafa",
     valueHighlight: "#f3f3f3",
     appBackground: "white",
