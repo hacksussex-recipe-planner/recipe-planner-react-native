@@ -17,6 +17,7 @@ const Days = ({navigation}) => {
   const nutritionData = useStoreState(state => state.nutritionData.data);
   const profile = useStoreState(state => state.profile.data);
   const getNutririonData = useStoreActions(actions => actions.nutritionData.getNutririonData);
+  const setNutritionData = useStoreActions(actions => actions.nutritionData.setNutritionData);
 
   const dayNames = [
     'Monday, 11',
@@ -36,6 +37,8 @@ const Days = ({navigation}) => {
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
+
+    setNutritionData(null);
 
     updateNutritionResults()    
   }, [refreshing]);
