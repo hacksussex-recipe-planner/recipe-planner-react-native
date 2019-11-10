@@ -12,4 +12,10 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "RecipePlanner";
   }
+
+  // @Override
+  // public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+  //     CalendarEventsPackage.onRequestPermissionsResult(requestCode, permissions, grantResults);
+  //     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+  // }
 }

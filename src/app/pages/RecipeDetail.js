@@ -10,7 +10,7 @@ const Recipe = ({navigation}) => {
 
   const ingredients = []
 
-  for (const [key, value] of Object.entries(recipe.ingredient)) {
+  for (const [key, value] of Object.entries(recipe.ingredient[0])) {
     ingredients.push([key, value])
   }
 
@@ -30,7 +30,7 @@ const Recipe = ({navigation}) => {
         <Header>{recipe['name of recipe']}</Header>
         <PictureWrapper>
           <Picture
-            source={{uri: `http://lorempixel.com/${randomNumber}/${randomNumber}/food/`}}
+            source={{uri: recipe.picture}}
           />
         </PictureWrapper>
         <SubHeader>Macros:</SubHeader>

@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStoreState } from 'easy-peasy';
+
 
 // import assets from '@assets';
 import theme from '@theme';
 
 import Recipe from './day/Recipe';
 
-const Day = ({dayData, dayName}) => {
+const Day = ({dayData, dayName, dayId}) => {
   
 //   console.warn('dayData')
 //   console.warn(props)
@@ -14,12 +16,16 @@ const Day = ({dayData, dayName}) => {
 //   console.warn(props.dayData)
 //   console.warn(props.dayData.recipes)
 
+  const profile = useStoreState(state => state.profile.data);
+
   const recipes = dayData;
+
+  const gymEmoji = profile.gymDates[dayId] ? '💪' : ''
 
   return (
     <MainContainer>
       <Header>
-        Your recipes for {dayName}
+        Your recipes for {dayName} {gymEmoji}
       </Header>
       {
         recipes.map((recipe, i) => {

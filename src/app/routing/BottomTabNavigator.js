@@ -43,7 +43,7 @@ const BottomTabNavigator = createBottomTabNavigator(
     },
   },
   {
-    initialRouteName: "Shopping",
+    initialRouteName: "Days",
     tabBarOptions: {
       headerVisible: false,
       activeTintColor: theme.colors.main,

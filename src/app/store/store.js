@@ -41,7 +41,8 @@ const profile = {
       vegan: false,
       veggie: false,
       dietType: 'bulk'
-    }
+    },
+    gymDates: [false, false, false, false, false, false, false]
   },
   
   updateProfileData: action((state, payload) => {
@@ -52,6 +53,10 @@ const profile = {
     } else {
       state.data[field] = value;
     }
+  }),
+
+  updateGymDates: action((state, payload) => {
+    state.gymDates = payload;
   })
 }
 

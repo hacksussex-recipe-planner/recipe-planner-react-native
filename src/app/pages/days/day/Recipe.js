@@ -16,7 +16,7 @@ const Recipe = ({recipeData, navigation}) => {
         onPress={() => navigation.navigate('RecipeDetail', { recipeData })}
       >
         <Picture
-          source={{uri: `http://lorempixel.com/${randomNumber}/${randomNumber}/food/`}}
+          source={{uri: recipeData.picture}}
         />
         <Text>
           {recipeData['name of recipe']}
