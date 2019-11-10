@@ -18,7 +18,12 @@ const Shopping = () => {
     )
   }
 
-  const shoppingList = nutritionData.shoppingList
+  const shoppingList = nutritionData.ingredients_list
+  const ingredients = []
+
+  for (const [key, value] of Object.entries(shoppingList)) {
+    ingredients.push([key, value])
+  }
 
   return (
     <MainContainer>
@@ -26,7 +31,7 @@ const Shopping = () => {
         <Header>
           Shopping list for the next week
         </Header>
-        {shoppingList.map((item, i) => {
+        {ingredients.slice(0, 30).map((item, i) => {
           return(
             <ItemRow key={i}>
               <Label>{item[0]}: </Label>

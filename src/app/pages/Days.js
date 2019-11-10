@@ -112,7 +112,7 @@ const Days = ({navigation}) => {
         }>
         <Wrapper>
           {
-            nutritionData.map((dayData, i) => {
+            nutritionData.weekly_recipes.map((dayData, i) => {
               return (
                 <Day key={i} dayData={dayData} dayName={dayNames[i]} dayId={i}/>
               )
