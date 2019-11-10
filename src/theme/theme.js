@@ -1,15 +1,19 @@
 const theme = {
   colors: {
     red: '#ff0000',
-    main: '#d4af37',
+    main: '#e15b33',
     inactive_item: 'grey',
     white: 'white',
     inputBackground: "#fafafa",
+    appBackground: "white",
+    textMain: "#888",
+    borderColor: "#ddd",
   },
   styles: {
-    mainPadding: '25px',
+    mainPadding: '16px',
     fontSize: '16px',
-    header: '20px'
+    header: '20px',
+    marginBlocks: '16px',
   }
 };
 

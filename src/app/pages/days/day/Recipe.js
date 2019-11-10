@@ -8,10 +8,17 @@ import theme from '@theme';
 const Recipe = ({recipeData, navigation}) => {
   return (
     <MainContainer>
-      <Button 
+      <TouchableWrapper 
         onPress={() => navigation.navigate('RecipeDetail', { recipeData })}
-        title={recipeData.name}
-      />
+      >
+        <Picture
+          source={{uri: 'http://lorempixel.com/100/100/food/'}}
+        >
+        </Picture>
+        <Text>
+          {recipeData.name}
+        </Text>
+      </TouchableWrapper>
     </MainContainer>
   );
 };
@@ -20,9 +27,31 @@ const MainContainer = styled.View`
   flex: 1;
 `;
 
+const TouchableWrapper = styled.TouchableOpacity`
+  flex-direction: row;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid ${theme.colors.main};
+  border-radius: 3px;
+  justify-content: flex-start;
+  border-style: dotted;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
+`
+
+const Picture = styled.Image`
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  margin-right: 16px; 
+`;
+
 const Text = styled.Text``;
 
-const Button = styled.Button``;
+const Button = styled.Button`
+  backgroun
+`;
 
 
 export default withNavigation(Recipe);

@@ -95,6 +95,7 @@ const Profile = () => {
 const MainContainer = styled.View`
   flex: 1;
   padding: ${theme.styles.mainPadding};
+  
 `;
 
 const HeaderWrapper = styled.View`
@@ -110,14 +111,13 @@ const ProfilePic = styled.Image`
 `;
 
 const Header = styled.Text`  
-
   font-size: ${theme.styles.header};
 `;
 
 const InputsWrapper = styled.View`
   padding: 20px;
   border-width: 1px;
-  border-color: #ddd;
+  border-color: ${theme.colors.borderColor};
   border-radius: 5px;
 `;
 

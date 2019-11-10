@@ -32,21 +32,28 @@ const Days = ({navigation}) => {
 
   return (
     <MainContainer>
-      <Text>Days</Text>
-      {
-        nutritionData.days.map((dayData, i) => {
-          return (
-            <Day key={i} dayData={dayData}/>
-          )
-        })
-      }
+      <Wrapper>
+        {
+          nutritionData.days.map((dayData, i) => {
+            return (
+              <Day key={i} dayData={dayData}/>
+            )
+          })
+        }
+      </Wrapper>
     </MainContainer>
   );
 };
 
-const MainContainer = styled.View`
+const MainContainer = styled.ScrollView`
   flex: 1;
+  background-color: ${theme.colors.appBackground}
 `;
+
+const Wrapper = styled.View`
+  padding-top: ${theme.styles.marginBlocks};
+  padding-bottom: ${theme.styles.marginBlocks};
+`
 
 const Text = styled.Text``
 

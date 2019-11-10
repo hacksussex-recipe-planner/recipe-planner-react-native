@@ -6,7 +6,7 @@ import theme from '@theme';
 
 import Recipe from './day/Recipe';
 
-const Day = (props) => {
+const Day = ({dayData}) => {
   
 //   console.warn('dayData')
 //   console.warn(props)
@@ -14,13 +14,14 @@ const Day = (props) => {
 //   console.warn(props.dayData)
 //   console.warn(props.dayData.recipes)
 
-  const recipes = props.dayData.recipes;
+  const recipes = dayData.recipes;
+  const date = dayData.date
 
   return (
     <MainContainer>
-      <Text>
-        Recipes of Day
-      </Text>
+      <Header>
+        Your recipes for {date}
+      </Header>
       {
         recipes.map((recipe, i) => {
           return (<Recipe key={i} recipeData={recipe} />)
@@ -32,8 +33,22 @@ const Day = (props) => {
 
 const MainContainer = styled.View`
   flex: 1;
+  margin-left: ${theme.styles.mainPadding};
+  margin-right: ${theme.styles.mainPadding};
+  margin-top: ${theme.styles.marginBlocks};
+  margin-bottom: ${theme.styles.marginBlocks};
+  padding: 20px;
+  border-width: 1px;
+  border-color: ${theme.colors.borderColor};
+  border-radius: 5px;
+  background-color: ${theme.colors.white}
 `;
 
-const Text = styled.Text``
+const Header = styled.Text`
+  text-align: center;
+  font-size: ${theme.styles.header};
+  color: ${theme.colors.textMain};
+  margin-bottom: 20px;
+`
 
 export default Day;
