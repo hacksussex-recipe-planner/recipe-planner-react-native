@@ -11,7 +11,18 @@ const Days = ({navigation}) => {
   const [nutritionData, setNutritionData] = useState(null)
   
   // TODO send actual data here
-  const mockPostData = {}
+  const mockPostData = {   
+    gender: 'male',
+    weight: 400.33,
+    height: 30.33,
+    age: 32,
+    preferences: {
+        vegan: true,
+        veggie: false,
+        dietType: 'bulk'
+    },
+    gymDates: [true, false, true, false, false, true, false]
+  }
 
   useEffect(() => {
     api.getNutririonData(mockPostData)
