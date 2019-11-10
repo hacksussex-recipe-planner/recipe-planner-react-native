@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import { ActivityIndicator } from 'react-native';
 import styled from 'styled-components';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 
@@ -37,7 +38,13 @@ const Days = ({navigation}) => {
   }, [])
 
   if (!nutritionData) {
-    return <Text>Loading...</Text>
+    return (
+      <LoadingWrapper>
+        <ActivityIndicator size={80} color={theme.colors.main}/>
+        <LoadingText>Nutrimagic will take effect</LoadingText>
+        <LoadingText>in a few seconds!</LoadingText>
+      </LoadingWrapper>
+    )
   }
 
   return (
@@ -63,6 +70,21 @@ const Wrapper = styled.View`
   padding-top: ${theme.styles.marginBlocks};
   padding-bottom: ${theme.styles.marginBlocks};
   background-color: ${theme.colors.inputBackground}
+`
+
+const ActivityIndicator = styled.ActivityIndicator`
+  margin-bottom: 20px;
+`;
+
+const LoadingWrapper = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`
+
+const LoadingText = styled.Text`
+  color: ${theme.colors.main};
+  font-size: 20px;
 `
 
 const Text = styled.Text``

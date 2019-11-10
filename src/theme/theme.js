@@ -7,6 +7,7 @@ const theme = {
     inactive_item: 'grey',
     white: 'white',
     inputBackground: "#fafafa",
+    valueHighlight: "#f3f3f3",
     appBackground: "white",
     textMain: "#888",
     borderColor: "#ddd",
@@ -15,6 +16,7 @@ const theme = {
     mainPadding: '16px',
     fontSize: '16px',
     header: '20px',
+    subHeader: '18px',
     marginBlocks: '16px',
   }
 };

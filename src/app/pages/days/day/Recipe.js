@@ -17,8 +17,7 @@ const Recipe = ({recipeData, navigation}) => {
       >
         <Picture
           source={{uri: `http://lorempixel.com/${randomNumber}/${randomNumber}/food/`}}
-        >
-        </Picture>
+        />
         <Text>
           {recipeData['name of recipe']}
         </Text>
