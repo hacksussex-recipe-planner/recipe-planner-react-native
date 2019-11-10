@@ -44,7 +44,7 @@ const Days = ({navigation}) => {
     <MainContainer>
       <Wrapper>
         {
-          nutritionData.days.map((dayData, i) => {
+          nutritionData.map((dayData, i) => {
             return (
               <Day key={i} dayData={dayData} dayName={dayNames[i]}/>
             )

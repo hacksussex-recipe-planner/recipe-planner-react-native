@@ -6,17 +6,21 @@ import { withNavigation } from 'react-navigation';
 import theme from '@theme';
 
 const Recipe = ({recipeData, navigation}) => {
+  const maximum = 160
+  const minimum = 80
+  var randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+
   return (
     <MainContainer>
       <TouchableWrapper 
         onPress={() => navigation.navigate('RecipeDetail', { recipeData })}
       >
         <Picture
-          source={{uri: 'http://lorempixel.com/100/100/food/'}}
+          source={{uri: `http://lorempixel.com/${randomNumber}/${randomNumber}/food/`}}
         >
         </Picture>
         <Text>
-          {recipeData.name}
+          {recipeData['name of recipe']}
         </Text>
       </TouchableWrapper>
     </MainContainer>
@@ -48,7 +52,9 @@ const Picture = styled.Image`
   margin-right: 16px; 
 `;
 
-const Text = styled.Text``;
+const Text = styled.Text`
+  margin-right: 45px;
+`;
 
 
 export default withNavigation(Recipe);

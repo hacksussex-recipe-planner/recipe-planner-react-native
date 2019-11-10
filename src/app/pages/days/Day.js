@@ -14,7 +14,7 @@ const Day = ({dayData, dayName}) => {
 //   console.warn(props.dayData)
 //   console.warn(props.dayData.recipes)
 
-  const recipes = dayData.recipes;
+  const recipes = dayData;
 
   return (
     <MainContainer>
